@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\tenantsec",
+    "\\src\\tenantsec\\core",
+    "\\src\\tenantsec\\review",
+    "\\src\\tenantsec\\review\\user_scanner",
+    "\\src\\tenantsec\\review\\user_scanner\\checks",
+    "\\src\\tenantsec\\ui",
+    "\\src\\tenantsec\\ui\\panels",
+    "\\src\\tenantsec\\ui\\presenters"
+  ],
+  "SelectedNode": "\\src\\tenantsec\\review\\user_scanner\\sheets.py",
+  "PreviewInSolutionExplorer": false
+}

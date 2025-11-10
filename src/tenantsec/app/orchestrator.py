@@ -1,41 +1,38 @@
 # src/tenantsec/app/orchestrator.py
 from tenantsec.app import event_bus, job_runner
 from tenantsec.core.graph_client import GraphClient
-from tenantsec.core import (
-    user_service, org_service, policy_service, roles_service, audit_service
-)
-from tenantsec.core import intune_service
 from tenantsec.core.data_gateway import DataGateway
-from tenantsec.core import org_service
-from tenantsec.core import ca_service
-from tenantsec.core import exchange_service
-from tenantsec.core import oauth_service
-from tenantsec.core import org_config_service
+from tenantsec.core import (
+    user_service, org_service, policy_service, roles_service, audit_service,
+    intune_service, ca_service, exchange_service, oauth_service, org_config_service
+)
+from tenantsec.review.user_scanner import run_user_checks
+from tenantsec.review.user_scanner.feed_signins import ensure_org_country_cache, build_signins_cache
+from tenantsec.review.user_scanner.feed_mail import build_mail_rules_cache
+from tenantsec.review.user_scanner.feed_signins import build_user_signins_by_user
+from tenantsec.http.client import (
+    HttpError, UnauthorizedError, ForbiddenError, NotFoundError,
+    ThrottleError, ServerError
+)
+
+class _Dbg:
+    def debug(self, msg): 
+        print("[HTTP]", msg)
+
 
 class Orchestrator:
-    """
-    Orchestrates initial data loading after auth connect:
-      - Users index (then user enrichers in background)
-      - Org summary
-      - Policies snapshot
-      - Directory roles
-      - Recent sign-ins
-    Publishes:
-      - users.list.ready (list[dict])
-      - org.info.ready
-      - data.core.ready (when both users+org are present in local gateway)
-    """
     def __init__(self, app_state):
         self.app_state = app_state
         self._started: set[str] = set()
         self._core_ready: set[str] = set()
 
     def _graph(self) -> GraphClient:
-        # Optional HTTP debug:
-        # class _Dbg:
-        #     def debug(self, msg): print("[HTTP]", msg)
-        # return GraphClient(lambda: self.app_state.token, logger=_Dbg())
-        return GraphClient(lambda: self.app_state.token)
+        # delegated token (users, org, etc.)
+        return GraphClient(lambda: self.app_state.token, logger=_Dbg())
+
+    def _graph_app(self) -> GraphClient:
+        # app-only for audit/signIns etc.
+        return GraphClient(lambda: (self.app_state.app_token or self.app_state.token), logger=_Dbg())
 
     def _maybe_publish_core_ready(self, tenant_id: str):
         if tenant_id in self._core_ready:
@@ -46,26 +43,18 @@ class Orchestrator:
             event_bus.publish("data.core.ready", {"tenant_id": tenant_id})
 
     def start_after_connect(self, tenant_id: str):
-        """Idempotent: safe to call multiple times for the same tenant."""
         if tenant_id in self._started:
             return
         self._started.add(tenant_id)
 
         graph = self._graph()
-
-        # === Phase A: users index ===
         fut_idx = job_runner.submit_job(user_service.list_users, graph, tenant_id)
 
         def on_users_index_done():
             try:
                 users = fut_idx.result()
-                # publish list of dicts for UI
                 event_bus.publish("users.list.ready", [u.__dict__ for u in users])
-            except Exception as e:
-                print(f"[orchestrator] users.index failed: {e}")
-                event_bus.publish("users.list.ready", [])
             finally:
-                # === Phase B: enrichers (fire-and-forget) ===
                 for func in (
                     user_service.enrich_profile,
                     user_service.enrich_licenses,
@@ -76,7 +65,6 @@ class Orchestrator:
                 ):
                     job_runner.submit_job(func, graph, tenant_id)
 
-                # === Other services ===
                 fut_org = job_runner.submit_job(org_service.get_org_summary, graph, tenant_id)
                 job_runner.submit_job(policy_service.snapshot_policies, graph, tenant_id)
                 job_runner.submit_job(roles_service.list_directory_roles, graph, tenant_id)
@@ -90,11 +78,46 @@ class Orchestrator:
 
                 self._maybe_publish_core_ready(tenant_id)
                 fut_org.add_done_callback(
-                    lambda _f: event_bus.publish(
-                        "jobs.callback.request",
-                        lambda: self._maybe_publish_core_ready(tenant_id)
-                    )
+                    lambda _f: event_bus.publish("jobs.callback.request",
+                                                 lambda: self._maybe_publish_core_ready(tenant_id))
                 )
 
-        # Ensure callback runs on the UI thread (main wires jobs.callback.request to root.after)
-        event_bus.publish("jobs.callback.request", on_users_index_done)
+        fut_idx.add_done_callback(lambda _f: event_bus.publish("jobs.callback.request", on_users_index_done))
+
+    # === USER REVIEW PATH ===
+    def start_user_review(self, tenant_id: str):
+        if not getattr(self.app_state, "app_token", None):
+            event_bus.publish("user.review.failed", {
+                "tenant_id": tenant_id,
+                "error": "App token missing (need admin-consented AuditLog.Read.All + client_secret)."
+            })
+            return
+        graph = self._graph_app()
+        fut = job_runner.submit_job(self._do_user_review, graph, tenant_id)
+
+        def _done():
+            try:
+                findings = fut.result()
+                event_bus.publish("user.review.ready", {"tenant_id": tenant_id, "findings": findings})
+            except Exception as e:
+                print("[user_review] Exception:", repr(e))
+                event_bus.publish("user.review.failed", {"tenant_id": tenant_id, "error": str(e)})
+
+        fut.add_done_callback(lambda _f: event_bus.publish("jobs.callback.request", _done))
+
+    def _do_user_review(self, graph: GraphClient, tenant_id: str):
+        try:
+            ensure_org_country_cache(tenant_id, graph=graph)
+            build_signins_cache(tenant_id, graph=graph, days=30)
+            build_user_signins_by_user(tenant_id, graph=graph, days=30)
+            build_mail_rules_cache(tenant_id, graph=graph)
+            return run_user_checks(tenant_id)
+
+        except (UnauthorizedError, ForbiddenError, NotFoundError, ThrottleError, ServerError, HttpError) as e:
+            print(f"[user_review][HTTP] code={getattr(e, 'status', None)} url={getattr(e, 'url', '')}")
+            print(f"[user_review][HTTP] details: {getattr(e, 'details', '')}")
+            raise
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            raise

@@ -1,0 +1,87 @@
+:root {
+    --ink: #f1f5f9;
+    --muted: #94a3b8;
+    --brand: #22d3ee;
+    --hair: #334155;
+    --bg: #0f172a;
+    --card: #0b1220;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, -apple-system, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    margin: 24px auto;
+    max-width: 1024px;
+    line-height: 1.45;
+}
+
+.cover {
+    background: linear-gradient(180deg, #0b1220, #0b1220cc);
+    border: 1px solid var(--hair);
+    padding: 24px;
+    margin: 24px 0;
+    border-radius: 10px;
+}
+
+h1, h2, h3 {
+    color: var(--brand);
+    margin: .6em 0 .3em;
+}
+
+h2 {
+    border-bottom: 2px solid #22d3ee33;
+    padding-bottom: 6px;
+    margin-top: 1.2em;
+}
+
+.small {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.kpi {
+    display: inline-block;
+    background: #0f172a;
+    border: 1px solid var(--hair);
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin: 6px 12px 0 0;
+    font-weight: 600;
+}
+
+table.grid {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 16px;
+    background: #0b1220;
+    color: var(--ink);
+}
+
+.grid th, .grid td {
+    border: 1px solid var(--hair);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.grid th {
+    background: #0f172a;
+    font-weight: 700;
+}
+
+.grid tbody tr:nth-child(even) td {
+    background: #0c1424;
+}
+
+pre {
+    background: #0f172a;
+    border: 1px solid var(--hair);
+    padding: 8px;
+    overflow: auto;
+    color: #e2e8f0;
+}

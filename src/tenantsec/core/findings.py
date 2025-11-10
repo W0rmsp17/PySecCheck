@@ -14,9 +14,15 @@ class Finding:
     remediation: Optional[str] = None
     docs: Optional[str] = None
     evidence: Optional[List[Dict[str, Any]]] = None
+
     tags: Optional[List[str]] = None
+
     rule_version: Optional[str] = None
     profile: Optional[str] = None
+
+    @property
+    def description(self) -> str:
+        return self.summary
 
     def as_text_block(self) -> str:
         lines = [

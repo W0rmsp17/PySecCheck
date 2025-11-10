@@ -13,6 +13,8 @@ def _cache_path(tenant_id: str, bucket: str) -> pathlib.Path:
     return cache_dir(tenant_id, bucket) / "users_index.json"
 
 
+
+
 def list_users(
     graph: GraphClient,
     tenant_id: str,

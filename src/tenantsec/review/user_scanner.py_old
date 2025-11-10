@@ -1,0 +1,163 @@
+# src/tenantsec/review/user_scanner.py
+from __future__ import annotations
+from typing import List, Dict, Any, Iterable
+from datetime import datetime, timedelta, timezone
+from tenantsec.core.findings import Finding
+from tenantsec.core.cache_manager import read_json, write_json_atomic, tenant_cache_dir
+
+from tenantsec.core import (
+    user_signin_service,
+    user_exchange_service,
+    user_account_service,
+    user_risk_service,
+    user_license_service,
+)
+
+# ---------- Data loader ----------
+def load_user_sheets(tenant_id: str) -> Dict[str, Any]:
+    """
+    Mirror of load_sheets_for_ai(), but only the bits we need for per-user checks.
+    Expected (example) structure:
+      {
+        "org": {"organization": {"country": "US", "display_name": "..."}},
+        "users": {"items": [ { "id": "...", "userPrincipalName": "...", "mfaEnabled": bool, ... } ]},
+        "signins": {"items": [ { "userId": "...", "status": "success", "country": "AU", "createdDateTime": "..." } ]},
+        "mail_rules": {"items": [ { "userId": "...", "rules": [ { "name": "...", "actions": {...}, ... } ] } ]},
+      }
+    """
+    cache_dir = tenant_cache_dir(tenant_id) / "USER"
+    cache_dir.mkdir(parents=True, exist_ok=True)
+
+    def _read(name: str):
+        p = cache_dir / f"{name}.json"
+        try:
+            return read_json(p)
+        except Exception:
+            return None
+
+    sheets = {
+        "org": _read("org") or {},
+        "users": _read("users") or {"items": []},
+        "signins": _read("signins") or {"items": []},
+        "mail_rules": _read("mail_rules") or {"items": []},
+    }
+    return sheets
+
+# ---------- Helpers ----------
+def _tenant_country(sheets: Dict[str, Any]) -> str:
+    return (sheets.get("org") or {}).get("organization", {}).get("country") or ""
+
+def _now_utc() -> datetime:
+    return datetime.now(timezone.utc)
+
+def _days_ago(n: int) -> datetime:
+    return _now_utc() - timedelta(days=n)
+
+def _add(finds: List[Finding], *, id: str, title: str, severity: str, summary: str, remediation: str = "", docs: str = "", evidence: Any = None):
+    finds.append(Finding(
+        id=id,
+        title=title,
+        severity=severity,  # "info"|"low"|"medium"|"high"|"critical"
+        summary=summary,
+        remediation=remediation or None,
+        docs=docs or None,
+        evidence=evidence if evidence else None,
+    ))
+
+# ---------- Checks ----------
+def _chk_user_mfa_disabled(sheets: Dict[str, Any], finds: List[Finding]):
+    for u in (sheets.get("users") or {}).get("items", []):
+        if not u.get("mfaEnabled", False):
+            _add(
+                finds,
+                id="user.mfa.disabled",
+                title=f"User without MFA: {u.get('userPrincipalName')}",
+                severity="high",
+                summary="This user does not have MFA enabled.",
+                remediation="Enable MFA for the user or require via Conditional Access.",
+                docs="https://learn.microsoft.com/entra/identity/authentication/howto-mfa-userstates",
+                evidence=[{"userId": u.get("id"), "upn": u.get("userPrincipalName")}],
+            )
+
+def _chk_signin_foreign_country(sheets: Dict[str, Any], finds: List[Finding]):
+    tenant_ctry = _tenant_country(sheets)
+    if not tenant_ctry:
+        return
+    for s in (sheets.get("signins") or {}).get("items", []):
+        if (s.get("status") or "").lower() != "success":
+            continue
+        c = (s.get("country") or "").upper()
+        if not c or c == tenant_ctry.upper():
+            continue
+        _add(
+            finds,
+            id="user.signin.foreign_country",
+            title="Successful sign-in from a foreign country",
+            severity="high",
+            summary=f"User {s.get('userPrincipalName') or s.get('userId')} signed in from {c} (tenant country {tenant_ctry}).",
+            remediation="Verify the user's travel; consider CA by country or require MFA for non-trusted locations.",
+            docs="https://learn.microsoft.com/entra/identity/conditional-access/location-condition",
+            evidence=[{
+                "userId": s.get("userId"),
+                "upn": s.get("userPrincipalName"),
+                "country": c,
+                "time": s.get("createdDateTime")
+            }],
+        )
+
+def _chk_mail_forward_external(sheets: Dict[str, Any], finds: List[Finding]):
+    """
+    Flag rules that forward mail to external addresses/domains.
+    Expect per user:
+      {"userId": "...", "rules":[ {"name":"...", "actions":{"forwardTo":[...], "forwardToExternal":true}, ...}]}
+    """
+    for entry in (sheets.get("mail_rules") or {}).get("items", []):
+        uid = entry.get("userId")
+        upn = entry.get("userPrincipalName")
+        for rule in entry.get("rules", []):
+            actions = rule.get("actions") or {}
+            forwards = actions.get("forwardTo") or []
+            ext_flag = actions.get("forwardToExternal", False)
+            ext = [addr for addr in forwards if "@" in str(addr)]
+            if ext or ext_flag:
+                _add(
+                    finds,
+                    id="user.mail.forward_external",
+                    title=f"External mailbox forwarding: {upn or uid}",
+                    severity="high",
+                    summary="User has a rule forwarding messages to external addresses.",
+                    remediation="Remove or restrict external forwarding rules. Prefer journaling/archiving controls.",
+                    docs="https://learn.microsoft.com/exchange/security-and-compliance/external-email-forwarding",
+                    evidence=[{"rule": rule.get("name"), "externalRecipients": ext, "userId": uid, "upn": upn}],
+                )
+
+def _chk_user_inactive_90d(sheets: Dict[str, Any], finds: List[Finding]):
+    cutoff = _days_ago(90)
+    for u in (sheets.get("users") or {}).get("items", []):
+        last = u.get("lastSignInDateTime")
+        if not last:
+            continue
+        try:
+            last_ts = datetime.fromisoformat(last.replace("Z", "+00:00"))
+        except Exception:
+            continue
+        if last_ts < cutoff:
+            _add(
+                finds,
+                id="user.account.stale",
+                title=f"Inactive user >90d: {u.get('userPrincipalName')}",
+                severity="medium",
+                summary="User account shows no sign-ins in the last 90 days.",
+                remediation="Review with owner; disable or remove if no longer needed.",
+                evidence=[{"lastSignIn": last, "userId": u.get("id"), "upn": u.get("userPrincipalName")}],
+            )
+
+# ---------- Entry point ----------
+def run_user_checks(tenant_id: str) -> List[Finding]:
+    sheets = load_user_sheets(tenant_id)
+    findings: List[Finding] = []
+    _chk_user_mfa_disabled(sheets, findings)
+    _chk_signin_foreign_country(sheets, findings)
+    _chk_mail_forward_external(sheets, findings)
+    _chk_user_inactive_90d(sheets, findings)
+    return findings

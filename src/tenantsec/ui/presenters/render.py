@@ -1,6 +1,6 @@
-# src/tenantsec/ui/presenters/render.py
 from __future__ import annotations
 from typing import Dict, Any, Iterable, List, Optional
+import json
 
 def _fmt_key(k: str) -> str:
     return k.replace("_", " ").title()
@@ -10,6 +10,13 @@ def _fmt_val(v: Any) -> str:
         return "—"
     if isinstance(v, (list, tuple)):
         return ", ".join(map(str, v))
+    if isinstance(v, dict):
+        # compact, readable one-liner if small; pretty if larger
+        try:
+            s = json.dumps(v, ensure_ascii=False)
+            return s if len(s) <= 80 else json.dumps(v, ensure_ascii=False, indent=2)
+        except Exception:
+            return str(v)
     return str(v)
 
 def render_lines_from_dict(
@@ -43,7 +50,7 @@ def render_skus(skus: List[Dict[str, Any]]) -> List[str]:
     """
     lines: List[str] = []
     for s in skus or []:
-        part = s.get("skuPartNumber") or s.get("accountName") or s.get("skuId", "")[:8]
+        part = s.get("skuPartNumber") or s.get("accountName") or str(s.get("skuId", ""))[:8]
         consumed = s.get("consumedUnits", 0)
         prepaid = (s.get("prepaidUnits") or {}).get("enabled", 0)
         status = s.get("capabilityStatus", "—")

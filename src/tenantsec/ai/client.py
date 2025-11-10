@@ -1,11 +1,11 @@
-# src/tenantsec/ai/client.py
 from __future__ import annotations
 import json
 import os
+import re
 import hashlib
 import urllib.request
 import urllib.error
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
 
 from tenantsec.core.ai_prefs import load_ai_settings
 from tenantsec.core.cache import cache_dir, read_json, write_json_atomic
@@ -27,6 +27,14 @@ def _get_settings() -> Dict[str, Any]:
         raise AIConfigError("ChatGPT/OpenAI API key is not configured.")
     return s
 
+def _chosen_model(default: str = "gpt-4o-mini") -> str:
+    s = _get_settings()
+    return (s.get("model") or default).strip()
+
+def _base_url() -> str:
+    s = _get_settings()
+    return (s.get("base_url") or "https://api.openai.com").rstrip("/")
+
 
 def _http_post_json(url: str, headers: Dict[str, str], body: Dict[str, Any]) -> Dict[str, Any]:
     data = json.dumps(body).encode("utf-8")
@@ -47,7 +55,7 @@ def _http_post_json(url: str, headers: Dict[str, str], body: Dict[str, Any]) -> 
 # =========================
 # Core LLM call
 # =========================
-def call_llm(system: str, prompt: str, *, model: str = "gpt-5", temperature: float = 0.2) -> str:
+def call_llm(system: str, prompt: str, *, model: Optional[str] = None, temperature: float = 0.2) -> str:
     """
     Minimal OpenAI-compatible Chat Completions call via stdlib urllib.
     Reads API config from tenantsec.core.ai_prefs.
@@ -58,8 +66,8 @@ def call_llm(system: str, prompt: str, *, model: str = "gpt-5", temperature: flo
     """
     s = _get_settings()
     api_key = s["api_key"]
-    base_url = (s.get("base_url") or "https://api.openai.com").rstrip("/")
-    mdl = s.get("model") or model
+    base_url = _base_url()
+    mdl = (model or _chosen_model()).strip()
 
     url = f"{base_url}/v1/chat/completions"
     headers = {
@@ -88,10 +96,8 @@ def call_llm(system: str, prompt: str, *, model: str = "gpt-5", temperature: flo
 def _ai_dir(tenant_id: str):
     return cache_dir(tenant_id, "AI")
 
-
 def cache_get(tenant_id: str, name: str):
     return read_json(_ai_dir(tenant_id) / f"{name}.json")
-
 
 def cache_put(tenant_id: str, name: str, data: Dict[str, Any]):
     write_json_atomic(_ai_dir(tenant_id) / f"{name}.json", data)
@@ -106,7 +112,6 @@ def _redact_upn(s: str) -> str:
         h = hashlib.sha1(m.group(0).encode("utf-8")).hexdigest()[:6]
         return f"<user#{h}>"
     return re.sub(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", repl, s)
-
 
 def _lite_findings(findings: List[Any], max_ev_chars: int = 800) -> List[Dict[str, Any]]:
     out = []
@@ -123,16 +128,29 @@ def _lite_findings(findings: List[Any], max_ev_chars: int = 800) -> List[Dict[st
             "id": f.id,
             "title": f.title,
             "severity": f.severity,
-            "description": getattr(f, "description", ""),
+            # IMPORTANT: Finding uses 'summary' now (not 'description')
+            "summary": getattr(f, "summary", ""),
             "remediation": getattr(f, "remediation", ""),
             "evidence_hint": ev_str,
         })
     return out
 
-
 def _hash_rules(findings: List[Any]) -> str:
     key = "|".join(f"{f.id}:{f.severity}" for f in findings)
     return hashlib.sha1(key.encode("utf-8")).hexdigest()[:10]
+
+
+# =========================
+# JSON helpers
+# =========================
+_FENCE_RE = re.compile(r"^```(?:json)?\s*|\s*```$", re.IGNORECASE)
+
+def _strip_code_fences(s: str) -> str:
+    return _FENCE_RE.sub("", s.strip())
+
+def _parse_llm_json(s: str) -> Dict[str, Any]:
+    s = _strip_code_fences(s)
+    return json.loads(s)
 
 
 # =========================
@@ -210,24 +228,36 @@ def build_exec_context(sheets: Dict[str, Any], findings: List[Any]) -> Dict[str,
         },
     }
 
-
 def build_tech_context(sheets: Dict[str, Any], findings: List[Any]) -> Dict[str, Any]:
     sub = {
         "policies": (sheets.get("policies") or {}).get("conditional_access", {}).get("policies", []),
         "roles": (sheets.get("roles") or {}).get("roles", []),
         "licenses": (sheets.get("licenses") or {}).get("skus", []),
     }
+    # IMPORTANT: 'summary' instead of 'description'
     return {
         "findings_full": json.loads(json.dumps([{
             "id": f.id,
             "title": f.title,
             "severity": f.severity,
-            "description": getattr(f, "description", ""),
+            "summary": getattr(f, "summary", ""),
             "remediation": getattr(f, "remediation", ""),
             "evidence": getattr(f, "evidence", None),
         } for f in findings], ensure_ascii=False)),
         "sheets_subset": sub,
     }
+
+
+# =========================
+# Scoring (deterministic)
+# =========================
+_WEIGHTS = {"critical": 10, "high": 8, "medium": 4, "low": 2, "info": 0}
+
+def compute_overall_score(findings: List[Any]) -> int:
+    total = 100
+    for f in findings:
+        total -= _WEIGHTS.get(str(getattr(f, "severity", "")).lower(), 6)
+    return max(0, total)
 
 
 # =========================
@@ -247,8 +277,12 @@ def generate_exec_summary(tenant_id: str, sheets: Dict[str, Any], findings: List
         org_small_context=json.dumps(ctx["org_small_context"], ensure_ascii=False),
         schema=json.dumps(EXEC_SCHEMA, indent=2),
     )
-    out = call_llm(EXEC_SYSTEM, prompt, model="gpt-5", temperature=0.2)
-    data = json.loads(out)  # Let JSON errors surface clearly.
+    out = call_llm(EXEC_SYSTEM, prompt, model=_chosen_model(), temperature=0.2)
+    data = _parse_llm_json(out)
+
+    # Deterministic score computed in code
+    data["overall_score"] = compute_overall_score(findings)
+
     cache_put(tenant_id, key, data)
     return data
 
@@ -266,7 +300,7 @@ def generate_technical_report_md(tenant_id: str, sheets: Dict[str, Any], finding
         sheets_subset=json.dumps(ctx["sheets_subset"], ensure_ascii=False),
         per_finding_heading="{id}: {title}",
     )
-    out = call_llm(TECH_SYSTEM, prompt, model="gpt-5", temperature=0.2)
+    out = call_llm(TECH_SYSTEM, prompt, model=_chosen_model(), temperature=0.2)
     md = _redact_upn(out)
     cache_put(tenant_id, key, {"markdown": md})
     return md
@@ -279,11 +313,10 @@ def test_connection() -> str:
     """
     Tiny/cheap sanity check. Returns 'PONG' on success.
     """
-    s = _get_settings()
     reply = call_llm(
         "You are a function.",
         "Reply with the single word: PONG.",
-        model=s.get("model") or "gpt-5",
+        model=_chosen_model(),
         temperature=0.0,
     )
     return reply.strip()

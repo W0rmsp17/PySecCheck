@@ -1,6 +1,5 @@
-# src/tenantsec/ui/presenters/review_render.py
 from __future__ import annotations
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 def _header_line(sev: str, title: str) -> str:
     return f"[{sev.upper()}] {title}"
@@ -17,19 +16,18 @@ def _indent_block(s: str, n: int = 2) -> str:
 
 def _fmt_scopes(v: Any) -> str:
     if isinstance(v, list):
-        return ", ".join(v)
+        return ", ".join(map(str, v))
     return str(v)
 
 def _format_dict_table(rows: List[Dict[str, Any]], column_order: List[str]) -> str:
     """
     Simple text table for Tk Text widget (monospace feel using alignment).
-    We’ll left-pad columns to a fixed width based on header + cell lengths.
     """
     if not rows:
         return ""
 
     # Compute column widths
-    widths = []
+    widths: List[int] = []
     for col in column_order:
         w = len(col)
         for r in rows:
@@ -39,9 +37,11 @@ def _format_dict_table(rows: List[Dict[str, Any]], column_order: List[str]) -> s
     # Build lines
     hdr = "  " + "  ".join(col.ljust(w) for col, w in zip(column_order, widths))
     sep = "  " + "  ".join("-" * w for w in widths)
-    body_lines = []
+    body_lines: List[str] = []
     for r in rows:
-        body_lines.append("  " + "  ".join(str(r.get(col, "") or "").ljust(w) for col, w in zip(column_order, widths)))
+        body_lines.append(
+            "  " + "  ".join(str(r.get(col, "") or "").ljust(w) for col, w in zip(column_order, widths))
+        )
 
     return "\n".join([hdr, sep] + body_lines)
 
@@ -63,6 +63,7 @@ def _format_oauth_evidence(evidence: List[Dict[str, Any]]) -> str:
     groups = _group_by_reason(evidence)
 
     lines: List[str] = []
+
     # 1) SPs with high-priv scopes
     sp_rows: List[Dict[str, Any]] = []
     for e in groups.get("Service principal exposes high-priv scopes.", []):
@@ -96,12 +97,11 @@ def _format_oauth_evidence(evidence: List[Dict[str, Any]]) -> str:
             continue
         lines.append(f"  Reason: {reason}")
         for e in entries:
-            # brief key details
-            parts = []
-            for k in ("servicePrincipal","client","resource","appId","scopes","consentType"):
+            parts: List[str] = []
+            for k in ("servicePrincipal", "client", "resource", "appId", "scopes", "consentType"):
                 v = e.get(k)
                 if v:
-                    parts.append(f"{k}={v if k!='scopes' else _fmt_scopes(v)}")
+                    parts.append(f"{k}={v if k != 'scopes' else _fmt_scopes(v)}")
             lines.append("    - " + "; ".join(parts) if parts else "    - (no details)")
         lines.append("")
 
@@ -124,13 +124,18 @@ def _format_generic_list_of_dicts(evidence: List[Dict[str, Any]]) -> str:
 def format_finding_to_text(f) -> str:
     """
     Pretty, readable block for the Tk Text widget.
-    Uses severity-tagged header like your existing renderer.
+    Aligns with the current Finding dataclass:
+      id, title, severity, summary, remediation, docs, evidence, ...
     """
     lines: List[str] = []
     lines.append(_header_line(f.severity, f.title))
     lines.append(_kv_line("id", f.id))
-    if f.description:
-        lines.append(_bullet_line(f.description))
+
+    # NOTE: Finding no longer has 'description'; use 'summary'
+    summary: Optional[str] = getattr(f, "summary", None)
+    if summary:
+        lines.append(_bullet_line(summary))
+
     if getattr(f, "remediation", None):
         lines.append(_kv_line("remediation", f.remediation))
     if getattr(f, "docs", None):
@@ -155,7 +160,7 @@ def format_finding_to_text(f) -> str:
         lines.append(_format_generic_list_of_dicts(ev))
         return "\n".join(lines)
 
-    # Fallback: string or simple json-ish
+    # Fallbacks
     if isinstance(ev, (str, int, float)):
         lines.append(f"    {ev}")
     else:

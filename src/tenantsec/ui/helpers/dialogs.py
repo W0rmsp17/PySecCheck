@@ -49,7 +49,7 @@ def copyable(
       - Grabs focus (non-blocking) and selects all for quick Ctrl/Cmd+C
       - Enter copies, Esc closes
     """
-    # Figure a good parent (prefer a real widget)
+    
     toplevel_parent = parent.winfo_toplevel() if parent else None
 
     # Create hidden, then show after layout to prevent flicker

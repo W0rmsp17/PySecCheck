@@ -1,0 +1,33 @@
+# src/tenantsec/review/user_scanner/feed_mail_rules.py
+from __future__ import annotations
+from typing import Dict, Any, List
+from tenantsec.core.graph_client import GraphClient
+from tenantsec.core.cache_manager import tenant_root
+from tenantsec.core.cache import read_json, write_json_atomic
+
+def build_mail_rules_cache(tenant_id: str, *, graph: GraphClient) -> str:
+    root = tenant_root(tenant_id) / "USER"
+    root.mkdir(parents=True, exist_ok=True)
+
+    # Source users from Static index (fast) or bail
+    idx = read_json(tenant_root(tenant_id) / "Static" / "users_index.json") or {}
+    users: List[Dict[str, Any]] = idx.get("users", [])
+    if not users:
+        write_json_atomic(root / "mail_rules.json", {"items": []})
+        return str(root / "mail_rules.json")
+
+    items: List[Dict[str, Any]] = []
+    for u in users:
+        uid = u.get("id"); upn = u.get("upn") or u.get("display_name")
+        if not uid: 
+            continue
+        try:
+            # inbox rules
+            rules_res = graph.get_json(f"/v1.0/users/{uid}/mailFolders/inbox/messageRules")
+            rules = rules_res.get("value", [])
+            items.append({"userId": uid, "userPrincipalName": upn, "rules": rules})
+        except Exception:
+            items.append({"userId": uid, "userPrincipalName": upn, "rules": []})
+
+    write_json_atomic(root / "mail_rules.json", {"items": items})
+    return str(root / "mail_rules.json")

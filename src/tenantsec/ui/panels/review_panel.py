@@ -8,6 +8,8 @@ from tenantsec.review.scanner import run_all_checks, org_rule_catalog, load_shee
 from tenantsec.core.cache_manager import clear_all
 from tenantsec.ui.presenters.review_render import format_finding_to_text
 from tenantsec.ai.client import generate_exec_summary, generate_technical_report_md
+from tenantsec.ui.templates import list_themes
+
 
 # --- small utility to standardize async UI handoff ---
 def _run_in_bg(self, fn, *args, on_done=None, on_error=None, finally_fn=None):
@@ -139,7 +141,13 @@ class ReviewPanel(ttk.Frame):
         super().__init__(master)
         self.event_bus = event_bus_mod
         self.app_state = app_state
+        self._theme = "default"
+        try:
+            self._theme = (getattr(app_state, "prefs", {}) or {}).get("report_theme", "default")
+        except Exception:
+            pass
         self._build_layout()
+
 
     def _build_layout(self):
         self.columnconfigure(0, weight=1)
@@ -156,6 +164,26 @@ class ReviewPanel(ttk.Frame):
         ttk.Button(bar, text="Export DOCX…", command=self._on_export_docx).pack(side="left", padx=(6, 0))
         ttk.Button(bar, text="Export HTML…", command=self._on_export_html).pack(side="left", padx=(6, 0))
 
+        # Theme picker
+        try:
+            themes = list_themes()
+        except Exception:
+            themes = ["default"]
+        ttk.Label(bar, text="Theme:").pack(side="left", padx=(12, 4))
+        self.cmb_theme = ttk.Combobox(bar, state="readonly", values=themes, width=12)
+        idx = themes.index(self._theme) if self._theme in themes else 0
+        self.cmb_theme.current(idx)
+        self.cmb_theme.pack(side="left")
+        def on_theme_changed(_evt=None):
+            self._theme = self.cmb_theme.get()
+            try:
+                if hasattr(self.app_state, "prefs"):
+                    self.app_state.prefs["report_theme"] = self._theme
+            except Exception:
+                pass
+            self.status.config(text=f"Theme: {self._theme}")
+        self.cmb_theme.bind("<<ComboboxSelected>>", on_theme_changed)
+
         self.status = ttk.Label(bar, text="Ready")
         self.status.pack(side="right")
 
@@ -164,41 +192,85 @@ class ReviewPanel(ttk.Frame):
         wrap.columnconfigure(0, weight=1)
         wrap.rowconfigure(0, weight=1)
 
-        self.text = tk.Text(wrap, wrap="word", state="disabled")
+        # IMPORTANT: leave it enabled; we will block edits via bindings
+        self.text = tk.Text(wrap, wrap="word")
         self.text.grid(row=0, column=0, sticky="nsew")
 
-        # Severity tag colors (safe to configure without try/except)
-        self.text.tag_configure("sev-CRITICAL", foreground="#b71c1c")
-        self.text.tag_configure("sev-HIGH",     foreground="#d32f2f")
-        self.text.tag_configure("sev-MEDIUM",   foreground="#f57c00")
-        self.text.tag_configure("sev-LOW",      foreground="#1976d2")
-        self.text.tag_configure("sev-INFO",     foreground="#2e7d32")
+        # Read-only bindings (keeps selection, scrolling, etc.)
+        for seq in ("<Key>", "<BackSpace>", "<Delete>", "<Control-v>", "<Control-x>",
+                    "<Control-BackSpace>", "<Control-Delete>"):
+            self.text.bind(seq, lambda e: "break")
 
+        # Monospace so tables/evidence align
+        try:
+            self.text.configure(font="TkFixedFont")
+        except Exception:
+            self.text.configure(font=("Consolas", 10))
+
+        # Configure severity tags once (color + bold), then raise them
+        sev_styles = {
+            "CRITICAL": "#b71c1c",
+            "HIGH":     "#d32f2f",
+            "MEDIUM":   "#f57c00",
+            "LOW":      "#1976d2",
+            "INFO":     "#2e7d32",
+        }
+        for sev, color in sev_styles.items():
+            self.text.tag_configure(f"sev-{sev}", foreground=color, font=("TkFixedFont", 10, "bold"))
+        for sev in sev_styles:
+            self.text.tag_raise(f"sev-{sev}")
+
+        # Scrollbar
         yscroll = ttk.Scrollbar(wrap, orient="vertical", command=self.text.yview)
         self.text.configure(yscrollcommand=yscroll.set)
         yscroll.grid(row=0, column=1, sticky="ns")
 
+        # Quick visual test
+        self.after(500, lambda: self._set_text("[HIGH] Test line\n   [MEDIUM] Indented ok\n[LOW] Last"))
+
+
+
     def _set_text(self, s: str):
-        self.text.config(state="normal")
+        # No state flipping required; widget is read-only via bindings
         self.text.delete("1.0", "end")
 
-        for line in s.splitlines():
-            # capture start index *before* inserting
-            start = self.text.index("end")
-            self.text.insert("end", line + "\n")
-            end = self.text.index("end-1c")
+        if not s:
+            return
 
-            tag = None
-            if line.startswith("["):
-                i = line.find("]")
-                if i > 0:
-                    sev = line[1:i].strip().upper()
-                    if sev in ("CRITICAL", "HIGH", "MEDIUM", "LOW", "INFO"):
-                        tag = f"sev-{sev}"
-            if tag:
-                self.text.tag_add(tag, start, end)
+        # Ensure trailing newline so last line has a lineend
+        if not s.endswith("\n"):
+            s += "\n"
+        self.text.insert("end", s)
 
-        self.text.config(state="disabled")
+        # Iterate by row indexes (rock-solid, no regex or end math)
+        total_rows = int(float(self.text.index("end-1c").split(".")[0]))
+        for row in range(1, total_rows + 1):
+            line_start = f"{row}.0"
+            line_end   = f"{row}.end"
+            line_text  = self.text.get(line_start, line_end)
+
+            # allow leading spaces before '['
+            stripped = line_text.lstrip()
+            if not stripped.startswith("["):
+                continue
+            rbr = stripped.find("]")
+            if rbr <= 1:
+                continue
+            sev = stripped[1:rbr].strip().upper()
+            if sev not in ("CRITICAL","HIGH","MEDIUM","LOW","INFO"):
+                continue
+
+            # Tag the whole visible line so it POPS on all themes
+            self.text.tag_add(f"sev-{sev}", line_start, line_end)
+
+
+
+    def _debug_tags(self):
+        for sev in ("CRITICAL","HIGH","MEDIUM","LOW","INFO"):
+            print(sev, self.text.tag_ranges(f"sev-{sev}"))
+
+
+
 
     def _on_run(self):
         tenant_id = self.app_state.credentials.get("tenant_id")
@@ -236,7 +308,8 @@ class ReviewPanel(ttk.Frame):
             footer = self._summary_footer(total_rules=total_rules, failed=0, sev_counts={})
             return "\n".join(header + ["No findings. ✅", "", footer])
 
-        blocks = [f.as_text_block() for f in findings]
+       # blocks = [f.as_text_block() for f in findings]
+        blocks = [format_finding_to_text(f) for f in findings] 
 
         failed = len(findings)
         sev_counts: Dict[str, int] = {}
@@ -351,6 +424,8 @@ class ReviewPanel(ttk.Frame):
             return
         self.status.config(text="Building HTML report…")
 
+        theme = getattr(self, "_theme", "default")  # <- selected theme
+
         def on_done(_res):
             self.status.config(text=f"Saved: {path}")
 
@@ -358,12 +433,13 @@ class ReviewPanel(ttk.Frame):
             messagebox.showerror("Export failed", str(e))
             self.status.config(text="Export failed")
 
-        _run_in_bg(self, self._do_export_html, tenant_id, path, on_done=on_done, on_error=on_error)
+        _run_in_bg(self, self._do_export_html, tenant_id, path, theme, on_done=on_done, on_error=on_error)
 
-    def _do_export_html(self, tenant_id: str, path: str):
+    def _do_export_html(self, tenant_id: str, path: str, theme: str):
         from tenantsec.report.generator import generate_reports, build_html_report
         exec_json, tech_md = generate_reports(tenant_id)
         tenant_name = exec_json.get("tenant_meta", {}).get("tenant_name") or "Tenant"
-        html_doc = build_html_report(tenant_name, tenant_id, exec_json, tech_md)
+        html_doc = build_html_report(tenant_name, tenant_id, exec_json, tech_md, theme=theme)
         with open(path, "w", encoding="utf-8") as f:
             f.write(html_doc)
+

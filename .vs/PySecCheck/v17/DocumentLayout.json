@@ -1,0 +1,1518 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\sheets.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\user_scanner\\sheets.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\feed_mail.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\user_scanner\\feed_mail.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\checks\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\user_scanner\\checks\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\checks\\auth.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\user_scanner\\checks\\auth.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\checks\\exchange.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\user_scanner\\checks\\exchange.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\runner.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\user_scanner\\runner.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\feed_mail_rules.py_old||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\user_scanner\\feed_mail_rules.py_old||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\feed_signins.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\user_scanner\\feed_signins.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\app\\orchestrator.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\app\\orchestrator.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\panels\\user_panel.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\ui\\panels\\user_panel.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\app\\main_app.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\app\\main_app.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\panels\\review_panel.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\ui\\panels\\review_panel.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\panels\\display_panel.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\ui\\panels\\display_panel.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\findings.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\findings.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\graph_client.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\graph_client.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\http\\client.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\http\\client.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_sheet_adapter.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\user_sheet_adapter.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\presenters\\user_report_render.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\ui\\presenters\\user_report_render.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\presenters\\review_render.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\ui\\presenters\\review_render.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_exchange_service.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\user_exchange_service.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\user_scanner\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\checks\\risk.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\user_scanner\\checks\\risk.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\checks\\hygiene.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\user_scanner\\checks\\hygiene.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\flow.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\user_scanner\\flow.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\refresh.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\user_scanner\\refresh.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\maintenance.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\user_scanner\\maintenance.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\store.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\user_scanner\\store.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\cache_manager.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\cache_manager.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\cache.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\cache.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner.py_old||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\user_scanner.py_old||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\helpers.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\user_scanner\\helpers.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\report\\NewFile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\report\\NewFile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_sheet_adapter.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\user_sheet_adapter.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_service.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\user_service.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_license_service.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\user_license_service.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_risk_service.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\user_risk_service.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_account_service.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\user_account_service.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_signin_service.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\user_signin_service.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\scanner.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\scanner.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\evaluator.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\evaluator.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\scoring.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\scoring.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\conditional_access\\rules_org.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\features\\conditional_access\\rules_org.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\org_config_service.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\org_config_service.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\policy_service.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\policy_service.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\license_service.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\license_service.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\org_service.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\org_service.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\intune_service.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\intune_service.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\data_gateway.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\data_gateway.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\exchange_service.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\exchange_service.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\panels\\settings_panel.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\ui\\panels\\settings_panel.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\presenters\\render.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\ui\\presenters\\render.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\report\\generator.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\report\\generator.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\templates\\css\\midnight.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\ui\\templates\\css\\midnight.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\templates\\css\\slate.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\ui\\templates\\css\\slate.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\templates\\css\\default.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\ui\\templates\\css\\default.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\templates\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\ui\\templates\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ai\\client.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\ai\\client.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\audit_service.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\audit_service.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\ai_prefs.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\ai_prefs.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\helpers\\dialogs.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\ui\\helpers\\dialogs.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\report\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\report\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ai\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\ai\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\registry.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\features\\registry.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\org_config\\rules_org.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\features\\org_config\\rules_org.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\intune_policies\\rules_org.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\features\\intune_policies\\rules_org.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\oauth_apps\\rules_org.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\features\\oauth_apps\\rules_org.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\rules.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\review\\rules.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\exchange\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\features\\exchange\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\exchange\\rules_org.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\features\\exchange\\rules_org.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\exchange_policies\\rules_org.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\features\\exchange_policies\\rules_org.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\intune_policies\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\features\\intune_policies\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\exchange_policies\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\features\\exchange_policies\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\app\\job_runner.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\app\\job_runner.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\oauth_service.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\oauth_service.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\org_config\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\features\\org_config\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\admin_roles\\rules_org.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\features\\admin_roles\\rules_org.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\conditional_access\\rules_expand.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\features\\conditional_access\\rules_expand.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\conditional_access\\util.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\features\\conditional_access\\util.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\mfa_enforcement\\rules.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\features\\mfa_enforcement\\rules.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\conditional_access\\resolve.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\features\\conditional_access\\resolve.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\helpers\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\ui\\helpers\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\presenters\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\ui\\presenters\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\legacy_auth\\rules.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\features\\legacy_auth\\rules.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\ca_service.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\ca_service.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\config\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\config\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\roles_service.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\roles_service.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\http\\throttle.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\http\\throttle.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_actions.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\user_actions.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\http\\errors.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\http\\errors.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\prefs.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\core\\prefs.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\config\\loader.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tenantsec\\config\\loader.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 302,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 98,
+          "SelectedChildIndex": 17,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "feed_mail.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\feed_mail.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\user_scanner\\feed_mail.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\feed_mail.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\user_scanner\\feed_mail.py",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-09T02:46:56.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "user_report_render.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\presenters\\user_report_render.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\ui\\presenters\\user_report_render.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\presenters\\user_report_render.py",
+              "RelativeToolTip": "src\\tenantsec\\ui\\presenters\\user_report_render.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-09T01:26:04.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "feed_signins.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\feed_signins.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\user_scanner\\feed_signins.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\feed_signins.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\user_scanner\\feed_signins.py",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-08T04:36:08.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "feed_mail_rules.py_old",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\feed_mail_rules.py_old",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\user_scanner\\feed_mail_rules.py_old",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\feed_mail_rules.py_old",
+              "RelativeToolTip": "src\\tenantsec\\review\\user_scanner\\feed_mail_rules.py_old",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-08T04:10:34.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "flow.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\flow.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\user_scanner\\flow.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\flow.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\user_scanner\\flow.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T13:18:25.102Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "refresh.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\refresh.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\user_scanner\\refresh.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\refresh.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\user_scanner\\refresh.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T13:18:06.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "maintenance.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\maintenance.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\user_scanner\\maintenance.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\maintenance.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\user_scanner\\maintenance.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T13:14:57.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "store.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\store.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\user_scanner\\store.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\store.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\user_scanner\\store.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T13:14:38.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "auth.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\checks\\auth.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\user_scanner\\checks\\auth.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\checks\\auth.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\user_scanner\\checks\\auth.py",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T12:18:13.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "user_sheet_adapter.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_sheet_adapter.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\user_sheet_adapter.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_sheet_adapter.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\user_sheet_adapter.py",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAAC4AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T11:54:05.439Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "risk.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\checks\\risk.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\user_scanner\\checks\\risk.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\checks\\risk.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\user_scanner\\checks\\risk.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T10:07:39.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "__init__.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\checks\\__init__.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\user_scanner\\checks\\__init__.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\checks\\__init__.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\user_scanner\\checks\\__init__.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T07:51:00.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "runner.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\runner.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\user_scanner\\runner.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\runner.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\user_scanner\\runner.py",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAAA4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T07:27:01.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "exchange.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\checks\\exchange.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\user_scanner\\checks\\exchange.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\checks\\exchange.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\user_scanner\\checks\\exchange.py",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T04:37:08.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "hygiene.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\checks\\hygiene.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\user_scanner\\checks\\hygiene.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\checks\\hygiene.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\user_scanner\\checks\\hygiene.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T04:36:45.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "NewFile",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\report\\NewFile",
+              "RelativeDocumentMoniker": "src\\tenantsec\\report\\NewFile",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\report\\NewFile",
+              "RelativeToolTip": "src\\tenantsec\\report\\NewFile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-07T04:14:10.499Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "helpers.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\helpers.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\user_scanner\\helpers.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\helpers.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\user_scanner\\helpers.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T04:13:16.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "sheets.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\sheets.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\user_scanner\\sheets.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\sheets.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\user_scanner\\sheets.py",
+              "ViewState": "AgIAALYAAAAAAAAAAAAowM4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T04:12:57.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "__init__.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\__init__.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\user_scanner\\__init__.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner\\__init__.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\user_scanner\\__init__.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T04:09:56.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "user_sheet_adapter.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_sheet_adapter.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\user_sheet_adapter.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_sheet_adapter.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\user_sheet_adapter.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T02:51:34.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "user_license_service.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_license_service.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\user_license_service.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_license_service.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\user_license_service.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T00:43:23.212Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "user_risk_service.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_risk_service.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\user_risk_service.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_risk_service.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\user_risk_service.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T00:43:15.442Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "user_account_service.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_account_service.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\user_account_service.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_account_service.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\user_account_service.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T00:43:05.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "user_exchange_service.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_exchange_service.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\user_exchange_service.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_exchange_service.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\user_exchange_service.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T00:42:55.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "user_signin_service.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_signin_service.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\user_signin_service.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_signin_service.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\user_signin_service.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-07T00:20:33.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "user_panel.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\panels\\user_panel.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\ui\\panels\\user_panel.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\panels\\user_panel.py",
+              "RelativeToolTip": "src\\tenantsec\\ui\\panels\\user_panel.py",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAowGkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-06T15:51:33.253Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "user_scanner.py_old",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner.py_old",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\user_scanner.py_old",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\user_scanner.py_old",
+              "RelativeToolTip": "src\\tenantsec\\review\\user_scanner.py_old",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAmwKMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-06T15:50:54.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "midnight.css",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\templates\\css\\midnight.css",
+              "RelativeDocumentMoniker": "src\\tenantsec\\ui\\templates\\css\\midnight.css",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\templates\\css\\midnight.css",
+              "RelativeToolTip": "src\\tenantsec\\ui\\templates\\css\\midnight.css",
+              "ViewState": "AgIAABUAAAAAAAAAAAAkwFcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-06T03:50:53.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "slate.css",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\templates\\css\\slate.css",
+              "RelativeDocumentMoniker": "src\\tenantsec\\ui\\templates\\css\\slate.css",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\templates\\css\\slate.css",
+              "RelativeToolTip": "src\\tenantsec\\ui\\templates\\css\\slate.css",
+              "ViewState": "AgIAABUAAAAAAAAAAAAkwFcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-06T03:50:42.368Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "default.css",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\templates\\css\\default.css",
+              "RelativeDocumentMoniker": "src\\tenantsec\\ui\\templates\\css\\default.css",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\templates\\css\\default.css",
+              "RelativeToolTip": "src\\tenantsec\\ui\\templates\\css\\default.css",
+              "ViewState": "AgIAACsAAAAAAAAAAAAkwFgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-06T03:50:26.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "__init__.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\templates\\__init__.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\ui\\templates\\__init__.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\templates\\__init__.py",
+              "RelativeToolTip": "src\\tenantsec\\ui\\templates\\__init__.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-06T03:49:59.678Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "__init__.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\report\\__init__.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\report\\__init__.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\report\\__init__.py",
+              "RelativeToolTip": "src\\tenantsec\\report\\__init__.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-05T09:18:18.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "generator.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\report\\generator.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\report\\generator.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\report\\generator.py",
+              "RelativeToolTip": "src\\tenantsec\\report\\generator.py",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAIwN4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-05T09:18:09.666Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "__init__.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ai\\__init__.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\ai\\__init__.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ai\\__init__.py",
+              "RelativeToolTip": "src\\tenantsec\\ai\\__init__.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-05T08:49:48.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "ai_prefs.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\ai_prefs.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\ai_prefs.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\ai_prefs.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\ai_prefs.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-05T08:47:28.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "client.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ai\\client.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\ai\\client.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ai\\client.py",
+              "RelativeToolTip": "src\\tenantsec\\ai\\client.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-05T06:25:24.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "review_render.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\presenters\\review_render.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\ui\\presenters\\review_render.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\presenters\\review_render.py",
+              "RelativeToolTip": "src\\tenantsec\\ui\\presenters\\review_render.py",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAIwIEAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-05T04:58:42.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "org_config_service.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\org_config_service.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\org_config_service.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\org_config_service.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\org_config_service.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-04T13:03:55.68Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "__init__.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\exchange\\__init__.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\features\\exchange\\__init__.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\exchange\\__init__.py",
+              "RelativeToolTip": "src\\tenantsec\\features\\exchange\\__init__.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-04T10:16:04.607Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "rules_org.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\exchange\\rules_org.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\features\\exchange\\rules_org.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\exchange\\rules_org.py",
+              "RelativeToolTip": "src\\tenantsec\\features\\exchange\\rules_org.py",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAmwFkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-04T09:52:08.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "__init__.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\intune_policies\\__init__.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\features\\intune_policies\\__init__.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\intune_policies\\__init__.py",
+              "RelativeToolTip": "src\\tenantsec\\features\\intune_policies\\__init__.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-04T09:05:54.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "rules_org.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\intune_policies\\rules_org.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\features\\intune_policies\\rules_org.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\intune_policies\\rules_org.py",
+              "RelativeToolTip": "src\\tenantsec\\features\\intune_policies\\rules_org.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-04T09:05:46.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "intune_service.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\intune_service.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\intune_service.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\intune_service.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\intune_service.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-04T09:05:09.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "__init__.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\exchange_policies\\__init__.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\features\\exchange_policies\\__init__.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\exchange_policies\\__init__.py",
+              "RelativeToolTip": "src\\tenantsec\\features\\exchange_policies\\__init__.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-04T09:04:51.607Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "rules_org.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\exchange_policies\\rules_org.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\features\\exchange_policies\\rules_org.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\exchange_policies\\rules_org.py",
+              "RelativeToolTip": "src\\tenantsec\\features\\exchange_policies\\rules_org.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-04T09:04:41.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "exchange_service.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\exchange_service.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\exchange_service.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\exchange_service.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\exchange_service.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-04T08:57:43.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "rules_org.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\oauth_apps\\rules_org.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\features\\oauth_apps\\rules_org.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\oauth_apps\\rules_org.py",
+              "RelativeToolTip": "src\\tenantsec\\features\\oauth_apps\\rules_org.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-04T08:22:22.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "oauth_service.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\oauth_service.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\oauth_service.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\oauth_service.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\oauth_service.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-04T08:21:34.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "__init__.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\org_config\\__init__.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\features\\org_config\\__init__.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\org_config\\__init__.py",
+              "RelativeToolTip": "src\\tenantsec\\features\\org_config\\__init__.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-04T04:55:19.041Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "rules_org.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\org_config\\rules_org.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\features\\org_config\\rules_org.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\org_config\\rules_org.py",
+              "RelativeToolTip": "src\\tenantsec\\features\\org_config\\rules_org.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-04T04:03:55.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "rules_expand.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\conditional_access\\rules_expand.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\features\\conditional_access\\rules_expand.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\conditional_access\\rules_expand.py",
+              "RelativeToolTip": "src\\tenantsec\\features\\conditional_access\\rules_expand.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T14:50:26.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "rules_org.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\admin_roles\\rules_org.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\features\\admin_roles\\rules_org.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\admin_roles\\rules_org.py",
+              "RelativeToolTip": "src\\tenantsec\\features\\admin_roles\\rules_org.py",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAswHgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T06:21:02.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "rules_org.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\conditional_access\\rules_org.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\features\\conditional_access\\rules_org.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\conditional_access\\rules_org.py",
+              "RelativeToolTip": "src\\tenantsec\\features\\conditional_access\\rules_org.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T06:19:57.968Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "cache_manager.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\cache_manager.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\cache_manager.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\cache_manager.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\cache_manager.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T02:25:49.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 80,
+              "Title": "resolve.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\conditional_access\\resolve.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\features\\conditional_access\\resolve.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\conditional_access\\resolve.py",
+              "RelativeToolTip": "src\\tenantsec\\features\\conditional_access\\resolve.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T02:11:38.576Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "evaluator.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\evaluator.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\evaluator.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\evaluator.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\evaluator.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T01:56:16.056Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "scoring.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\scoring.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\scoring.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\scoring.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\scoring.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T01:56:03.123Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "rules.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\rules.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\rules.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\rules.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\rules.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T01:55:50.868Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "findings.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\findings.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\findings.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\findings.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\findings.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T01:54:42.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 81,
+              "Title": "__init__.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\helpers\\__init__.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\ui\\helpers\\__init__.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\helpers\\__init__.py",
+              "RelativeToolTip": "src\\tenantsec\\ui\\helpers\\__init__.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T01:20:40.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "__init__.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\__init__.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\__init__.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\__init__.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\__init__.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T01:20:30.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 82,
+              "Title": "__init__.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\presenters\\__init__.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\ui\\presenters\\__init__.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\presenters\\__init__.py",
+              "RelativeToolTip": "src\\tenantsec\\ui\\presenters\\__init__.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T01:20:01.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "review_panel.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\panels\\review_panel.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\ui\\panels\\review_panel.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\panels\\review_panel.py",
+              "RelativeToolTip": "src\\tenantsec\\ui\\panels\\review_panel.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T01:12:47.957Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "util.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\conditional_access\\util.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\features\\conditional_access\\util.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\conditional_access\\util.py",
+              "RelativeToolTip": "src\\tenantsec\\features\\conditional_access\\util.py",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADcAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T00:40:24.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 84,
+              "Title": "ca_service.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\ca_service.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\ca_service.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\ca_service.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\ca_service.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T00:38:41.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "scanner.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\scanner.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\review\\scanner.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\review\\scanner.py",
+              "RelativeToolTip": "src\\tenantsec\\review\\scanner.py",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T00:34:28.435Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "registry.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\registry.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\features\\registry.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\registry.py",
+              "RelativeToolTip": "src\\tenantsec\\features\\registry.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T00:33:40.454Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 83,
+              "Title": "rules.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\legacy_auth\\rules.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\features\\legacy_auth\\rules.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\legacy_auth\\rules.py",
+              "RelativeToolTip": "src\\tenantsec\\features\\legacy_auth\\rules.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T00:33:17.89Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "rules.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\mfa_enforcement\\rules.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\features\\mfa_enforcement\\rules.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\features\\mfa_enforcement\\rules.py",
+              "RelativeToolTip": "src\\tenantsec\\features\\mfa_enforcement\\rules.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-03T00:32:56.51Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 89,
+              "Title": "errors.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\http\\errors.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\http\\errors.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\http\\errors.py",
+              "RelativeToolTip": "src\\tenantsec\\http\\errors.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-02T10:25:13.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "client.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\http\\client.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\http\\client.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\http\\client.py",
+              "RelativeToolTip": "src\\tenantsec\\http\\client.py",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAAFIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-02T10:25:10.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "cache.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\cache.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\cache.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\cache.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\cache.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-01T02:56:37.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "dialogs.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\helpers\\dialogs.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\ui\\helpers\\dialogs.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\helpers\\dialogs.py",
+              "RelativeToolTip": "src\\tenantsec\\ui\\helpers\\dialogs.py",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAACsAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-02T09:38:57.921Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "render.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\presenters\\render.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\ui\\presenters\\render.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\presenters\\render.py",
+              "RelativeToolTip": "src\\tenantsec\\ui\\presenters\\render.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-02T09:38:29.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 88,
+              "Title": "user_actions.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_actions.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\user_actions.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_actions.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\user_actions.py",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAALMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-02T08:26:24.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 90,
+              "Title": "prefs.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\prefs.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\prefs.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\prefs.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\prefs.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-02T05:27:20.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "settings_panel.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\panels\\settings_panel.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\ui\\panels\\settings_panel.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\panels\\settings_panel.py",
+              "RelativeToolTip": "src\\tenantsec\\ui\\panels\\settings_panel.py",
+              "ViewState": "AgIAANAAAAAAAAAAAAAAANAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-02T04:36:32.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "data_gateway.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\data_gateway.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\data_gateway.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\data_gateway.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\data_gateway.py",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAIwG0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-01T23:53:17.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "license_service.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\license_service.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\license_service.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\license_service.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\license_service.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-01T13:32:35.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "org_service.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\org_service.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\org_service.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\org_service.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\org_service.py",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAswDcAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-01T11:26:20.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 85,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\config\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\tenantsec\\config\\appsettings.json",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\config\\appsettings.json",
+              "RelativeToolTip": "src\\tenantsec\\config\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-01T10:13:28.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 91,
+              "Title": "loader.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\config\\loader.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\config\\loader.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\config\\loader.py",
+              "RelativeToolTip": "src\\tenantsec\\config\\loader.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-01T10:13:10.518Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "graph_client.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\graph_client.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\graph_client.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\graph_client.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\graph_client.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-01T09:14:33.891Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "audit_service.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\audit_service.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\audit_service.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\audit_service.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\audit_service.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-01T07:26:42.309Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "policy_service.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\policy_service.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\policy_service.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\policy_service.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\policy_service.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-01T07:26:35.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 86,
+              "Title": "roles_service.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\roles_service.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\roles_service.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\roles_service.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\roles_service.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-11-01T07:26:27.666Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 87,
+              "Title": "throttle.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\http\\throttle.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\http\\throttle.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\http\\throttle.py",
+              "RelativeToolTip": "src\\tenantsec\\http\\throttle.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-10-31T23:37:26.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "display_panel.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\panels\\display_panel.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\ui\\panels\\display_panel.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\ui\\panels\\display_panel.py",
+              "RelativeToolTip": "src\\tenantsec\\ui\\panels\\display_panel.py",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAowOoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-10-31T13:48:02.961Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "main_app.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\app\\main_app.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\app\\main_app.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\app\\main_app.py",
+              "RelativeToolTip": "src\\tenantsec\\app\\main_app.py",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowEkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-10-31T13:11:42.89Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "job_runner.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\app\\job_runner.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\app\\job_runner.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\app\\job_runner.py",
+              "RelativeToolTip": "src\\tenantsec\\app\\job_runner.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-10-31T13:09:10.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "orchestrator.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\app\\orchestrator.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\app\\orchestrator.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\app\\orchestrator.py",
+              "RelativeToolTip": "src\\tenantsec\\app\\orchestrator.py",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAowG8AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-10-31T13:08:42.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "user_service.py",
+              "DocumentMoniker": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_service.py",
+              "RelativeDocumentMoniker": "src\\tenantsec\\core\\user_service.py",
+              "ToolTip": "C:\\Users\\chris\\source\\repos\\tenant-security-checker\\tenant-security-checker\\PySecCheck\\src\\tenantsec\\core\\user_service.py",
+              "RelativeToolTip": "src\\tenantsec\\core\\user_service.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-10-31T11:56:27.136Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

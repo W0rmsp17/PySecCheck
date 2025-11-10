@@ -105,14 +105,16 @@ class DisplayPanel(ttk.Frame):
         self.event_bus.subscribe("users.list.ready", self._on_users_ready)
         self.event_bus.subscribe("users.list.updated", self._on_users_updated)
         self.event_bus.subscribe("org.info.ready", self._on_org_ready)
-        self.event_bus.subscribe("org.skus.ready", self._on_skus_ready)   # licenses
+        self.event_bus.subscribe("org.skus.ready", self._on_skus_ready)   
         self.event_bus.subscribe("data.core.ready", self._on_core_ready)
         self.event_bus.subscribe("display.prefs.changed", self._on_prefs_changed)
 
-    # ---------- event handlers ----------
+    #event handlering
     def _on_skus_ready(self, payload):
         if payload.get("tenant_id") == self._tenant_id:
             self.after(0, self._paint_licenses)
+
+
 
     def _on_users_ready(self, users):
         self._tenant_id = self.app_state.credentials.get("tenant_id")
@@ -143,7 +145,7 @@ class DisplayPanel(ttk.Frame):
             return
         self.after(0, self._repaint_all)
 
-    # ---------- data / UI helpers ----------
+    # UI helpers
     def _populate_tree(self, users):
         self.tree.delete(*self.tree.get_children())
         for u in users or []:
