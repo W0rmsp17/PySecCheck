@@ -279,3 +279,26 @@ class DisplayPanel(ttk.Frame):
             self._lic_lbl.config(text="\n".join(lines))
         else:
             self._lic_lbl.config(text="(No licenses found)")
+
+    def _ensure_user_table(self):
+        if getattr(self, "user_tbl", None): return
+        self.user_tbl = ttk.Treeview(self, columns=("user","mfa","issues"), show="headings", height=12)
+        for c,h in (("user","User (hashed/UPN)"),("mfa","MFA"),("issues","Issues")):
+            self.user_tbl.heading(c, text=h); self.user_tbl.column(c, width=220, anchor="w")
+        self.user_tbl.grid(row=9, column=0, columnspan=4, sticky="nsew", pady=6)
+
+    def _on_ai_exec_ready(self, payload):
+        data = payload or {}
+        exec_json = data.get("exec_json") or {}
+        users = (data.get("users_table") or [])
+        # org header
+        ov = exec_json.get("org_overview") or {}
+        self.status.config(text=f"{ov.get('tenant_name','?')} • users={ov.get('user_count',len(users))} • score={exec_json.get('overall_score','?')}")
+        # table
+        self._ensure_user_table()
+        for i in self.user_tbl.get_children(): self.user_tbl.delete(i)
+        for u in users:
+            upn = u.get("upn") or u.get("user_hash") or "unknown"
+            mfa = "Yes" if u.get("mfa_enabled") else "No"
+            issues = ", ".join(u.get("issues") or [])
+            self.user_tbl.insert("", "end", values=(upn, mfa, issues))

@@ -11,16 +11,12 @@ from tenantsec.core.ai_prefs import load_ai_settings
 from tenantsec.core.cache import cache_dir, read_json, write_json_atomic
 
 
-# =========================
-# Public errors
-# =========================
+
 class AIConfigError(RuntimeError):
     """Raised when AI settings (e.g., API key) are not configured."""
 
 
-# =========================
-# Settings / HTTP helpers
-# =========================
+
 def _get_settings() -> Dict[str, Any]:
     s = load_ai_settings()
     if not s.get("api_key"):
@@ -52,9 +48,6 @@ def _http_post_json(url: str, headers: Dict[str, str], body: Dict[str, Any]) -> 
         raise RuntimeError(f"Network error: {e.reason}") from e
 
 
-# =========================
-# Core LLM call
-# =========================
 def call_llm(system: str, prompt: str, *, model: Optional[str] = None, temperature: float = 0.2) -> str:
     """
     Minimal OpenAI-compatible Chat Completions call via stdlib urllib.
@@ -169,22 +162,32 @@ Inputs:
 - Context: {org_small_context}
 
 Requirements:
-Return valid JSON with schema:
+Return ONLY valid JSON matching this schema:
 {schema}
 
-Scoring guidance:
-- Start at 100.
-- Subtract per finding by severity: HIGH 6–10, MEDIUM 3–5, LOW 1–2.
-- Cap at >= 0.
-
-Keep lists concise (max 5 items)."""
+Rules:
+- Summarize at org level first (overview, headline_risks, quick_wins, roadmap).
+- Build user_findings_table as compact rows: hash UPNs already provided in findings_lite/evidence, list key issues (e.g., 'MFA disabled'), set mfa_enabled True/False, add brief notes if helpful.
+- Do NOT include mailbox rules or per-user narrative.
+- Keep lists concise (max 5 items each).
+- Scoring: start 100; subtract per finding by severity (HIGH 6–10, MEDIUM 3–5, LOW 1–2); not below 0.
+"""
 
 EXEC_SCHEMA = {
-    "overall_score": 0,
-    "headline_risks": [{"id": "string", "why": "string", "impact": "string", "priority": 1}],
-    "quick_wins": [{"action": "string", "owner": "string", "eta_days": 7}],
-    "roadmap": [{"theme": "string", "items": [{"action": "string", "eta_days": 14}]}],
+  "overall_score": 0,
+  "org_overview": {
+    "tenant_id": "string",
+    "tenant_name": "string",
+    "user_count": 0
+  },
+  "headline_risks": [{"id": "string", "why": "string", "impact": "string", "priority": 1}],
+  "quick_wins": [{"action": "string", "owner": "string", "eta_days": 7}],
+  "roadmap": [{"theme": "string", "items": [{"action": "string", "eta_days": 14}]}],
+  "user_findings_table": [
+    {"user_hash": "string", "issues": ["string"], "mfa_enabled": False, "notes": "string"}
+  ]
 }
+
 
 TECH_SYSTEM = (
     "You are a Microsoft 365 tenant security remediator. Produce concise, actionable Markdown. "
@@ -208,9 +211,7 @@ Be concrete and concise.
 """
 
 
-# =========================
-# Context builders
-# =========================
+
 def build_exec_context(sheets: Dict[str, Any], findings: List[Any]) -> Dict[str, Any]:
     org_cfg = sheets.get("org_config") or {}
     users = (sheets.get("users") or {}).get("items", []) or []
@@ -248,9 +249,6 @@ def build_tech_context(sheets: Dict[str, Any], findings: List[Any]) -> Dict[str,
     }
 
 
-# =========================
-# Scoring (deterministic)
-# =========================
 _WEIGHTS = {"critical": 10, "high": 8, "medium": 4, "low": 2, "info": 0}
 
 def compute_overall_score(findings: List[Any]) -> int:
@@ -260,41 +258,63 @@ def compute_overall_score(findings: List[Any]) -> int:
     return max(0, total)
 
 
-# =========================
-# AI generators
-# =========================
+
 def generate_exec_summary(tenant_id: str, sheets: Dict[str, Any], findings: List[Any]) -> Dict[str, Any]:
-    sig = _hash_rules(findings)
+    ctx = build_exec_context(sheets, findings)
+    users_compact = _compact_users(sheets)
+    sig_src = json.dumps({
+        "tenant_meta": ctx["tenant_meta"],
+        "findings_lite": ctx["findings_lite"],
+        "org_small_context": ctx["org_small_context"],
+        "users": users_compact,             # <-- include users in cache key
+    }, ensure_ascii=False)
+    sig = hashlib.sha1(sig_src.encode("utf-8")).hexdigest()[:10]
     key = f"exec_summary_{sig}"
     cached = cache_get(tenant_id, key)
-    if cached:
-        return cached
+    if cached: return cached
 
-    ctx = build_exec_context(sheets, findings)
     prompt = EXEC_PROMPT.format(
         tenant_meta=json.dumps(ctx["tenant_meta"], ensure_ascii=False),
         findings_lite=json.dumps(ctx["findings_lite"], ensure_ascii=False),
         org_small_context=json.dumps(ctx["org_small_context"], ensure_ascii=False),
         schema=json.dumps(EXEC_SCHEMA, indent=2),
     )
-    out = call_llm(EXEC_SYSTEM, prompt, model=_chosen_model(), temperature=0.2)
-    data = _parse_llm_json(out)
-
-    # Deterministic score computed in code
+    data = _parse_llm_json(call_llm(EXEC_SYSTEM, prompt, model=_chosen_model(), temperature=0.2))
     data["overall_score"] = compute_overall_score(findings)
-
+    data["org_overview"] = ctx["tenant_meta"]
+    data["user_findings_table"] = users_compact   # <-- force into report
     cache_put(tenant_id, key, data)
     return data
 
+def _compact_users(sheets: Dict[str,Any]) -> List[Dict[str,Any]]:
+    users = (sheets.get("users") or {}).get("items", []) or []
+    def hash_upn(u):
+        upn = (u.get("upn") or "").strip().lower()
+        return u.get("user_hash") or (f"user#{hashlib.sha1(upn.encode('utf-8')).hexdigest()[:10]}" if upn else "user#unknown")
+    out = []
+    for u in users:
+        out.append({
+            "user_hash": hash_upn(u),
+            "issues": u.get("issues") or [],
+            "mfa_enabled": bool(u.get("mfa_enabled")),
+            "notes": ""
+        })
+    return out        
+
 
 def generate_technical_report_md(tenant_id: str, sheets: Dict[str, Any], findings: List[Any]) -> str:
-    sig = _hash_rules(findings)
+    ctx = build_tech_context(sheets, findings)
+    sig_src = json.dumps({
+        "findings_full": ctx["findings_full"],
+        "sheets_subset": ctx["sheets_subset"],
+    }, ensure_ascii=False)
+    sig = hashlib.sha1(sig_src.encode("utf-8")).hexdigest()[:10]
     key = f"tech_report_{sig}"
+
     cached = cache_get(tenant_id, key)
     if cached and isinstance(cached, Dict) and "markdown" in cached:
         return cached["markdown"]
 
-    ctx = build_tech_context(sheets, findings)
     prompt = TECH_PROMPT.format(
         findings_full=json.dumps(ctx["findings_full"], ensure_ascii=False),
         sheets_subset=json.dumps(ctx["sheets_subset"], ensure_ascii=False),
@@ -302,13 +322,20 @@ def generate_technical_report_md(tenant_id: str, sheets: Dict[str, Any], finding
     )
     out = call_llm(TECH_SYSTEM, prompt, model=_chosen_model(), temperature=0.2)
     md = _redact_upn(out)
+    users = (sheets.get("users") or {}).get("items", []) or []
+    if users:
+        lines = ["\n## Appendix: User Findings\n", "| User | MFA | Issues |", "|---|---|---|"]
+        for u in users:
+            name = u.get("user_hash") or u.get("upn","unknown")
+            mfa = "Yes" if u.get("mfa_enabled") else "No"
+            issues = ", ".join(u.get("issues") or [])
+            lines.append(f"| {name} | {mfa} | {issues} |")
+        md += "\n" + "\n".join(lines)
     cache_put(tenant_id, key, {"markdown": md})
     return md
 
 
-# =========================
-# Connectivity test
-# =========================
+
 def test_connection() -> str:
     """
     Tiny/cheap sanity check. Returns 'PONG' on success.

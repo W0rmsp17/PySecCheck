@@ -8,13 +8,43 @@ from tenantsec.core import (
 )
 from tenantsec.review.user_scanner import run_user_checks
 from tenantsec.review.user_scanner.feed_signins import ensure_org_country_cache, build_signins_cache
-from tenantsec.review.user_scanner.feed_mail import build_mail_rules_cache
+#from tenantsec.review.user_scanner.feed_mail import build_mail_rules_cache
 from tenantsec.review.user_scanner.feed_signins import build_user_signins_by_user
 from tenantsec.http.client import (
     HttpError, UnauthorizedError, ForbiddenError, NotFoundError,
     ThrottleError, ServerError
 )
 
+import json, re
+def _users_from_findings(findings):
+    users = {}
+    for f in findings or []:
+        evs = getattr(f, "evidence", []) or []
+        if not isinstance(evs, list): evs = [evs]
+        for e in evs:
+            s = json.dumps(e, ensure_ascii=False)
+            m = re.search(r'upn=([^,\s]+)', s)
+            if not m: continue
+            upn = m.group(1)
+            row = users.setdefault(upn, {"upn": upn, "issues": [], "mfa_enabled": None})
+            if getattr(f, "id", "") == "user.mfa.disabled":
+                row["mfa_enabled"] = False
+                row["issues"].append("MFA disabled")
+    return {"items": list(users.values())}
+
+# orchestrator._do_user_review(): stop mailbox rules
+#build_mail_rules_cache(tenant_id, graph=graph)  # <- REMOVE this line
+'''
+# orchestrator.start_user_review._done():
+findings = fut.result()
+sheets = {
+    "org": {"tenantId": tenant_id, "organization": {"display_name": getattr(self.app_state, "org_name", "unknown")}},
+    "org_config": {},
+    "users": _users_from_findings(findings),
+}
+event_bus.publish("ai.exec.run", {"tenant_id": tenant_id, "sheets": sheets, "findings": findings})
+event_bus.publish("user.review.ready", {"tenant_id": tenant_id, "findings": findings})
+'''
 class _Dbg:
     def debug(self, msg): 
         print("[HTTP]", msg)
@@ -87,17 +117,23 @@ class Orchestrator:
     # === USER REVIEW PATH ===
     def start_user_review(self, tenant_id: str):
         if not getattr(self.app_state, "app_token", None):
-            event_bus.publish("user.review.failed", {
-                "tenant_id": tenant_id,
-                "error": "App token missing (need admin-consented AuditLog.Read.All + client_secret)."
-            })
+            event_bus.publish("user.review.failed", {"tenant_id": tenant_id,
+                "error": "App token missing (need admin-consented AuditLog.Read.All + client_secret)."})
             return
+
         graph = self._graph_app()
         fut = job_runner.submit_job(self._do_user_review, graph, tenant_id)
 
         def _done():
             try:
                 findings = fut.result()
+                sheets = {
+                    "org": {"tenantId": tenant_id,
+                            "organization": {"display_name": getattr(self.app_state, "org_name", "unknown")}},
+                    "org_config": {},
+                    "users": _users_from_findings(findings),
+                }
+                event_bus.publish("ai.exec.run", {"tenant_id": tenant_id, "sheets": sheets, "findings": findings})
                 event_bus.publish("user.review.ready", {"tenant_id": tenant_id, "findings": findings})
             except Exception as e:
                 print("[user_review] Exception:", repr(e))
@@ -105,12 +141,13 @@ class Orchestrator:
 
         fut.add_done_callback(lambda _f: event_bus.publish("jobs.callback.request", _done))
 
+
     def _do_user_review(self, graph: GraphClient, tenant_id: str):
         try:
             ensure_org_country_cache(tenant_id, graph=graph)
             build_signins_cache(tenant_id, graph=graph, days=30)
             build_user_signins_by_user(tenant_id, graph=graph, days=30)
-            build_mail_rules_cache(tenant_id, graph=graph)
+            #build_mail_rules_cache(tenant_id, graph=graph)
             return run_user_checks(tenant_id)
 
         except (UnauthorizedError, ForbiddenError, NotFoundError, ThrottleError, ServerError, HttpError) as e:

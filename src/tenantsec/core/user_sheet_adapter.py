@@ -29,7 +29,7 @@ def get_users_index_sheet(tenant_id: str) -> Dict[str, Any]:
 
     items_out: List[Dict[str, Any]] = []
     for u in data.get("users", []):
-        mfa_state = u.get("mfa_state")  # "Registered" | "NotRegistered" | None
+        mfa_state = u.get("mfa_state") 
         items_out.append({
             "id": u.get("id"),
             "userPrincipalName": u.get("upn") or u.get("userPrincipalName") or u.get("mail"),
@@ -37,7 +37,7 @@ def get_users_index_sheet(tenant_id: str) -> Dict[str, Any]:
             "accountEnabled": u.get("accountEnabled"),
             "roles": u.get("roles") or [],
             "license_skus": u.get("license_skus") or u.get("license_names") or [],
-            "lastSignInDateTime": u.get("last_sign_in"),          # normalize name
+            "lastSignInDateTime": u.get("last_sign_in"),         
             "passwordNeverExpires": bool(u.get("passwordNeverExpires", False)),
             "mfaEnabled": (mfa_state == "Registered"),
         })
@@ -45,7 +45,7 @@ def get_users_index_sheet(tenant_id: str) -> Dict[str, Any]:
     return {"items": items_out, "raw_fields": data.get("fields", [])}
 
 def _test_adapter_fake():
-    # Imagine users_index.json had one user like below:
+  
     fake = {
         "users": [{
             "id": "u1",

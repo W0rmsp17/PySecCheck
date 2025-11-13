@@ -70,36 +70,40 @@ def _do_ai_exec(self, tenant_id: str):
     findings = run_all_checks(tenant_id)
     return generate_exec_summary(tenant_id, sheets, findings)
 
+# --- replace _render_exec_summary with:
 def _render_exec_summary(self, data: dict) -> str:
-    lines = []
-    lines.append("=== PySecCheck — AI Executive Summary ===")
-    lines.append("")
-    score = data.get("overall_score", 0)
-    lines.append(f"Overall Score: {score}/100")
-    lines.append("")
-
+    ov = data.get("org_overview") or data.get("tenant_meta") or {}
+    lines = [
+        "=== PySecCheck — AI Executive Summary ===",
+        "",
+        f"Tenant: {ov.get('tenant_id','unknown')}  •  Name: {ov.get('tenant_name','Tenant')}  •  Users: {ov.get('user_count','?')}",
+        f"Overall Score: {data.get('overall_score',0)}/100",
+        ""
+    ]
     def sec(title, items, fmt):
-        if not items:
-            return
-        lines.append(title)
-        for it in items:
-            lines.append("  • " + fmt(it))
-        lines.append("")
-
-    sec("Headline Risks:",
-        data.get("headline_risks", []),
+        if items: lines.append(title); [lines.append("  • " + fmt(x)) for x in items]; lines.append("")
+    sec("Headline Risks:", data.get("headline_risks", []),
         lambda r: f"[{r.get('priority','?')}] {r.get('id')}: {r.get('why')} (impact: {r.get('impact')})")
-
-    sec("Quick Wins:",
-        data.get("quick_wins", []),
+    sec("Quick Wins:", data.get("quick_wins", []),
         lambda q: f"{q.get('action')} — owner: {q.get('owner')}, ETA: {q.get('eta_days','?')}d")
-
-    for road in data.get("roadmap", []):
-        lines.append(f"Roadmap — {road.get('theme')}:")
-        for it in road.get("items", []):
-            lines.append(f"  • {it.get('action')} (ETA: {it.get('eta_days','?')}d)")
+    for rd in data.get("roadmap", []):
+        lines.append(f"Roadmap — {rd.get('theme')}:")
+        for it in rd.get("items", []): lines.append(f"  • {it.get('action')} (ETA: {it.get('eta_days','?')}d)")
+        lines.append("")
+    # User table (from AI-injected user_findings_table)
+    users = data.get("user_findings_table") or []
+    if users:
+        lines += ["User Findings:", "  (hashed) | MFA | Issues"]
+        for u in users:
+            name = u.get("user_hash","user#unknown")
+            mfa = "Yes" if u.get("mfa_enabled") else "No"
+            issues = ", ".join(u.get("issues") or [])
+            lines.append(f"  {name} | {mfa} | {issues}")
         lines.append("")
     return "\n".join(lines)
+
+# --- in _do_export_docx / _do_export_html, change tenant_name line to:
+#tenant_name = (exec_json.get("org_overview") or exec_json.get("tenant_meta") or {}).get("tenant_name") or "Tenant"
 
 # --------------------- AI TECH REPORT ---------------------
 
@@ -381,6 +385,8 @@ class ReviewPanel(ttk.Frame):
 
     # --- Export DOCX / HTML ---
 
+# --- Export DOCX / HTML ---
+
     def _on_export_docx(self):
         tenant_id = self.app_state.credentials.get("tenant_id")
         if not tenant_id:
@@ -407,7 +413,8 @@ class ReviewPanel(ttk.Frame):
     def _do_export_docx(self, tenant_id: str, path: str):
         from tenantsec.report.generator import generate_reports, build_docx_report
         exec_json, tech_md = generate_reports(tenant_id)
-        tenant_name = exec_json.get("tenant_meta", {}).get("tenant_name") or "Tenant"
+        ov = (exec_json.get("org_overview") or exec_json.get("tenant_meta") or {})
+        tenant_name = ov.get("tenant_name") or "Tenant"
         build_docx_report(path, tenant_name, tenant_id, exec_json, tech_md)
 
     def _on_export_html(self):
@@ -424,7 +431,7 @@ class ReviewPanel(ttk.Frame):
             return
         self.status.config(text="Building HTML report…")
 
-        theme = getattr(self, "_theme", "default")  # <- selected theme
+        theme = getattr(self, "_theme", "default")
 
         def on_done(_res):
             self.status.config(text=f"Saved: {path}")
@@ -438,8 +445,10 @@ class ReviewPanel(ttk.Frame):
     def _do_export_html(self, tenant_id: str, path: str, theme: str):
         from tenantsec.report.generator import generate_reports, build_html_report
         exec_json, tech_md = generate_reports(tenant_id)
-        tenant_name = exec_json.get("tenant_meta", {}).get("tenant_name") or "Tenant"
+        ov = (exec_json.get("org_overview") or exec_json.get("tenant_meta") or {})
+        tenant_name = ov.get("tenant_name") or "Tenant"
         html_doc = build_html_report(tenant_name, tenant_id, exec_json, tech_md, theme=theme)
         with open(path, "w", encoding="utf-8") as f:
             f.write(html_doc)
+
 

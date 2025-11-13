@@ -1,0 +1,43 @@
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.pytest_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+
+# Envs / tooling
+.venv/
+env/
+venv/
+.python-version
+.vscode/
+.idea/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Visual Studio
+.vs/
+
+# Builds / dists
+build/
+dist/
+*.egg-info/
+
+# App data (local/cache/output/logs)
+src/tenantsec/data/cache/
+src/tenantsec/data/output/
+src/tenantsec/log/
+debug_ai/
+
+# Config/secrets (keep templates, ignore real creds)
+config/appsettings.json
+src/tenantsec/core/ai_prefs.local.json
+*.secret.json
+*.env
+.env
